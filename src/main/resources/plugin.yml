@@ -1,0 +1,4 @@
+name: Newbies
+version: ${project.version}
+main: devlaunchers.newbies.Newbies
+api-version: 1.16
