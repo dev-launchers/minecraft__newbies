@@ -4,9 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -49,6 +52,7 @@ public final class Newbies extends JavaPlugin implements Listener {
     public void onEnable() {
         initializeStarterPack();
         getServer().getPluginManager().registerEvents(this, this);
+        getServer().getPluginManager().registerEvents(new EntityInteractListener(), this);
     }
 
     @EventHandler
@@ -58,6 +62,25 @@ public final class Newbies extends JavaPlugin implements Listener {
             getLogger().info("New player detected: " + player.getName());
             this.starterPack.forEach((material, amount) ->
                     player.getInventory().addItem(new ItemStack(material, amount)));
+        }
+    }
+
+    public final class EntityInteractListener implements Listener {
+        @EventHandler
+        public void onEntityInteracted(PlayerInteractEntityEvent event) {
+            final Player player = event.getPlayer();
+            final Entity target = event.getRightClicked();
+            if (target instanceof Villager) {
+                final Villager villager = (Villager) target;
+                player.sendMessage("Targeting villager " + villager);
+                ItemStack [] items = villager.getInventory().getContents();
+                for (ItemStack item : items) {
+                    if (item != null) {
+                        player.sendMessage(villager + " has " + item);
+                    }
+                }
+                villager.getInventory().addItem(new ItemStack(Material.BREAD, 64));
+            }
         }
     }
 }
