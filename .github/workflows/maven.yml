@@ -32,14 +32,13 @@ jobs:
         CUSTOM_TAG: ${{ github.event.inputs.version }}
     - name: Build with Maven
       run: | 
-       cd newbies
        mvn -B package --file pom.xml
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
         name: Release ${{ github.event.inputs.version }}
         body: ${{ github.event.inputs.description }}
-        files: newbies/target/*.jar
+        files: target/*.jar
         tag_name: v${{ github.event.inputs.version }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
