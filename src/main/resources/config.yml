@@ -2,3 +2,17 @@ newbies:
   starter-pack:
     OAK_LOG: 16
     COOKED_BEEF: 16
+    bytes:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2584
+      type: PAPER
+      amount: 9
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"Byte$"}],"text":""}'
+        lore:
+        - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"Money!"}],"text":""}'
+        custom-model-data: 8
+        ItemFlags:
+        - HIDE_ENCHANTS
