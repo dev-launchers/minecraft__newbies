@@ -2,7 +2,6 @@ package devlaunchers.newbies;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -21,14 +20,7 @@ public final class Newbies extends JavaPlugin implements Listener {
         if(section != null) {
             this.starterPack = new ArrayList<>();
             section.getValues(false).forEach((key, value) -> {
-                Material material = Material.getMaterial(key);
-                if(material != null && material.isItem()) {
-                    if (value instanceof Integer) {
-                        this.starterPack.add(new ItemStack(material, (Integer) value));
-                    } else {
-                        getLogger().warning("Invalid material amount: " + value);
-                    }
-                } else if (value instanceof ItemStack) {
+                if (value instanceof ItemStack) {
                     this.starterPack.add((ItemStack) value);
                 } else {
                     getLogger().warning("Invalid material: " + key + " ... skipping");

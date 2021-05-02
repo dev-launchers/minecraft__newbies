@@ -1,7 +1,15 @@
 newbies:
   starter-pack:
-    OAK_LOG: 16
-    COOKED_BEEF: 16
+    oak-logs:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2584
+      type: OAK_LOG
+      amount: 16
+    steak:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2584
+      type: COOKED_BEEF
+      amount: 16
     bytes:
       ==: org.bukkit.inventory.ItemStack
       v: 2584
