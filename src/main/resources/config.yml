@@ -24,3 +24,17 @@ newbies:
         custom-model-data: 8
         ItemFlags:
         - HIDE_ENCHANTS
+    newbie-guide:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2584
+      type: WRITTEN_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: BOOK_SIGNED
+        title: Newbie's Guide
+        author: World
+        pages:
+        - Welcome to DevLauncher's Minecraft Server! Here you can do almost everything
+          you'd like to! Play with your friends and have fun!
+        - Just another page bruuuuh ..
+        - Sneak peek to some amazing content!
