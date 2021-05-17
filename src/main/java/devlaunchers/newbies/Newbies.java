@@ -52,7 +52,7 @@ public final class Newbies extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         final Player player = event.getPlayer();
-        if(!player.hasPlayedBefore() || true) { // TODO: Change
+        if(!player.hasPlayedBefore()) {
             getLogger().info("New player detected: " + player.getName());
             //this.starterPack.forEach((item) -> player.getInventory().addItem(new ItemStack(item)));
             for(ItemStack i : starterPack){
