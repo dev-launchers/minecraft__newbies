@@ -20,7 +20,23 @@ newbies:
         meta-type: UNSPECIFIC
         display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"Byte$"}],"text":""}'
         lore:
-        - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"Money!"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"Money!"}],"text":""}'
         custom-model-data: 8
         ItemFlags:
-        - HIDE_ENCHANTS
+          - HIDE_ENCHANTS
+    newbie-guide:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2584
+      type: WRITTEN_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: BOOK_SIGNED
+        title: Newbie's Guide
+        author: World
+        pages:
+          - (OPEN_URL__https://discord.gg/mK9kssbA) Click to open temporary discord invite link (Might be expired when you try!)
+          - (OPEN_FILE__/openthisfile.txt) idk what this do but click to open a file!!
+          - (RUN_COMMAND__/help) Click to run /help command!
+          - (SUGGEST_COMMAND__/help) idk what this do but neverthless click to suggest /help command!
+          - (CHANGE_PAGE__3) Click to goto 3rd page!
+          - (COPY_TO_CLIPBOARD__itworks) Click to copy itworks to your keyboard!
