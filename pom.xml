@@ -55,6 +55,10 @@
 
     <repositories>
         <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
             <id>papermc-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
@@ -70,6 +74,11 @@
             <artifactId>paper-api</artifactId>
             <version>1.16.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.dev-launchers</groupId>
+            <artifactId>minecraft__dev-launchers-library</artifactId>
+            <version>v0.0.5</version>
         </dependency>
     </dependencies>
 </project>
